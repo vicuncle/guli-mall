@@ -33,7 +33,6 @@ public class PmsBaseAttrValue implements Serializable{
      */
     private String isEnabled;
 
-    private String urlParam;
 
     public Long getId() {
         return id;
@@ -67,11 +66,4 @@ public class PmsBaseAttrValue implements Serializable{
         this.isEnabled = isEnabled;
     }
 
-    public String getUrlParam() {
-        return urlParam;
-    }
-
-    public void setUrlParam(String urlParam) {
-        this.urlParam = urlParam;
-    }
 }

@@ -3,6 +3,7 @@ package com.atguigu.gmall.bean;
 
 
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.io.Serializable;
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class PmsProductSaleAttr implements Serializable{
      */
     private String saleAttrName;
 
-
+    @Transient
     private List<PmsProductSaleAttrValue> spuSaleAttrValueList;
 
     public Long getId() {

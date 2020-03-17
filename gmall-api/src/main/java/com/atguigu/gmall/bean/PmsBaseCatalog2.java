@@ -2,6 +2,7 @@ package com.atguigu.gmall.bean;
 
 
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.io.Serializable;
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class PmsBaseCatalog2 implements Serializable {
      * 一级分类编号
      */
     private Integer catalog1Id;
-
+    @Transient
     private List<PmsBaseCatalog3> catalog3List;
 
     public Integer getId() {

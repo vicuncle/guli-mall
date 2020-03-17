@@ -3,6 +3,7 @@ package com.atguigu.gmall.bean;
 
 
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.io.Serializable;
 import java.util.List;
 
@@ -38,10 +39,10 @@ public class PmsProductInfo implements Serializable{
      */
     private Long tmId;
 
-
+    @Transient
     private List<PmsProductImage> spuImageList;
 
-
+    @Transient
     private List<PmsProductSaleAttr> spuSaleAttrList;
 
     public Long getId() {

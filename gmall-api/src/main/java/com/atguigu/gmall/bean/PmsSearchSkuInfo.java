@@ -3,6 +3,7 @@ package com.atguigu.gmall.bean;
 
 
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
@@ -25,6 +26,7 @@ public class PmsSearchSkuInfo implements Serializable {
     private String skuDefaultImg;
     private Double hotScore;
     private Long productId;
+    @Transient
     private List<PmsSkuAttrValue> skuAttrValueList;
 
 
