@@ -1,5 +1,7 @@
 package com.atguigu.gmall.bean;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 import java.io.Serializable;
@@ -19,6 +21,8 @@ public class PmsBaseAttrInfo implements Serializable{
      * 编号
      */
     @Id
+    //插入数据库之后返回主键
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     /**
      * 属性名称

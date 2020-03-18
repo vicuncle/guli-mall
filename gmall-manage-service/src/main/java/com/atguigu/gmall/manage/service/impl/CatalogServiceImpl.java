@@ -12,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
+/**
+ * 商品分类实现类
+ */
 @Service
 public class CatalogServiceImpl implements CatalogService {
 
@@ -24,11 +27,20 @@ public class CatalogServiceImpl implements CatalogService {
     @Autowired
     private PmsBaseCatalog3Mapper catalog3Mapper;
 
+    /**
+     * 获取一级分类列表
+     * @return
+     */
     @Override
     public List<PmsBaseCatalog1> getCatalog1() {
         return catalog1Mapper.selectAll();
     }
 
+    /**
+     * 根据一级分类id获取二级分类列表
+     * @param catalog1Id 一级分类id
+     * @return
+     */
     @Override
     public List<PmsBaseCatalog2> getCatalog2(String catalog1Id) {
         PmsBaseCatalog2 pmsBaseCatalog2 = new PmsBaseCatalog2();
@@ -37,6 +49,11 @@ public class CatalogServiceImpl implements CatalogService {
         return pmsBaseCatalog2s;
     }
 
+    /**
+     * 根据二级分类id获取三级分类列表
+     * @param catalog2Id 二级分类id
+     * @return
+     */
     @Override
     public List<PmsBaseCatalog3> getCatalog3(String catalog2Id) {
         PmsBaseCatalog3 pmsBaseCatalog3 = new PmsBaseCatalog3();
