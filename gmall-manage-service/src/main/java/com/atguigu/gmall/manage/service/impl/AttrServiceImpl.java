@@ -3,8 +3,10 @@ package com.atguigu.gmall.manage.service.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.atguigu.gmall.bean.PmsBaseAttrInfo;
 import com.atguigu.gmall.bean.PmsBaseAttrValue;
+import com.atguigu.gmall.bean.PmsBaseSaleAttr;
 import com.atguigu.gmall.manage.mapper.PmsBaseAttrInfoMapper;
 import com.atguigu.gmall.manage.mapper.PmsBaseAttrValueMapper;
+import com.atguigu.gmall.manage.mapper.PmsBaseSaleAttrMapper;
 import com.atguigu.gmall.service.AttrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.entity.Example;
@@ -22,6 +24,9 @@ public class AttrServiceImpl implements AttrService {
 
     @Autowired
     private PmsBaseAttrValueMapper pmsBaseAttrValueMapper;
+
+    @Autowired
+    private PmsBaseSaleAttrMapper pmsBaseSaleAttrMapper;
 
     /**
      * 根据三级分类id查询属性名称列表
@@ -94,5 +99,14 @@ public class AttrServiceImpl implements AttrService {
             return "success";
         }
         return "failed";
+    }
+
+    /**
+     * 获取平台基本销售属性列表
+     * @return
+     */
+    @Override
+    public List<PmsBaseSaleAttr> baseSaleAttrList() {
+        return pmsBaseSaleAttrMapper.selectAll();
     }
 }

@@ -2,6 +2,8 @@ package com.atguigu.gmall.bean;
 
 
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 
@@ -19,6 +21,7 @@ public class PmsProductImage implements Serializable{
      * 编号
      */
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     /**
      * 商品id

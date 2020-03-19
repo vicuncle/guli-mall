@@ -3,6 +3,7 @@ package com.atguigu.gmall.manage.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.atguigu.gmall.bean.PmsBaseAttrInfo;
 import com.atguigu.gmall.bean.PmsBaseAttrValue;
+import com.atguigu.gmall.bean.PmsBaseSaleAttr;
 import com.atguigu.gmall.service.AttrService;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,16 @@ public class AttrController {
     private AttrService attrService;
 
     /**
+     * 获取平台基本销售属性列表
+     * @return
+     */
+    @PostMapping("/baseSaleAttrList")
+    public List<PmsBaseSaleAttr> baseSaleAttrList(){
+        List<PmsBaseSaleAttr> baseSaleAttrs = attrService.baseSaleAttrList();
+        return baseSaleAttrs;
+    }
+
+    /**
      * 平台属性列表
      * @param catalog3Id 三级分类id
      * @return
@@ -26,10 +37,6 @@ public class AttrController {
     @GetMapping("/attrInfoList")
     public List<PmsBaseAttrInfo> getAttrInfoList(String catalog3Id){
         List<PmsBaseAttrInfo> pmsBaseAttrInfos = attrService.getAttrInfoList(catalog3Id);
-//        for (PmsBaseAttrInfo pmsBaseAttrInfo : pmsBaseAttrInfos) {
-//            List<PmsBaseAttrValue> attrValues = attrService.getAttrValueList(pmsBaseAttrInfo.getId());
-//            pmsBaseAttrInfo.setAttrValueList(attrValues);
-//        }
         return pmsBaseAttrInfos;
     }
 

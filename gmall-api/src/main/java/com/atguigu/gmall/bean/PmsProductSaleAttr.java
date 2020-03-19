@@ -2,6 +2,8 @@ package com.atguigu.gmall.bean;
 
 
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 import java.io.Serializable;
@@ -21,6 +23,7 @@ public class PmsProductSaleAttr implements Serializable{
      * id
      */
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     /**
      * 商品id
